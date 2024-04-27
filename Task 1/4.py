@@ -6,4 +6,5 @@ else:
     print("Не попал")
 
 name,lastname,age = input(),input(),input()
+print("Ваше имя: {name} , Фамилия: {lastname}, Возраст: {age}".format(age=age, name=name, lastname=lastname))
 print(f"Ваше имя: {name}, фамилия: {lastname}, возраст: {age} лет.")
