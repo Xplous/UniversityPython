@@ -4,10 +4,10 @@ try:
     hod = int(input) 
     print("Введите букву и цифру")
 except ValueError:
-    if (len(hod) == 2 & hod in ship):
-       print("Попал")
-    else:
-       print("Не попал")
+       if (len(hod) == 2 & hod in ship):
+           print("Попал")
+       else:
+           print("Не попал")
 
 name,lastname,age = input(),input(),input()
 print("Ваше имя: {name} , Фамилия: {lastname}, Возраст: {age}".format(age=age, name=name, lastname=lastname))
