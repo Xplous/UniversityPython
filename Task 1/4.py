@@ -3,8 +3,8 @@ hod = input().upper()
 try:
     hod = int(input) 
     print("Введите букву и цифру")
-except:
-    if (len(hod) == 2 && hod in ship):
+except ValueError:
+    if (len(hod) == 2 & hod in ship):
        print("Попал")
     else:
        print("Не попал")
