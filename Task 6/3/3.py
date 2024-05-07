@@ -1,5 +1,4 @@
 import unittest
-import time
 import sys
 
 
@@ -35,11 +34,4 @@ class TestFactorialFunction(unittest.TestCase):
         with self.assertRaises(ValueError):
             factorial(1000000)
 
-
-if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestFactorialFunction)
-    runner = unittest.TextTestRunner()
-    start_time = time.time()
-    result = runner.run(suite)
-    end_time = time.time()
-    print(f"Время выполнения тестов: {end_time - start_time} секунд")
+# Тут мог быть вывод в консоль времени через модуль time, но PyCharm выводит время тестов за нас
