@@ -2,6 +2,7 @@ import unittest
 import time
 import sys
 
+
 def factorial(n: int):
     if n < 0:
         raise ValueError("Факториал отрицательного числа не определен")
@@ -13,6 +14,7 @@ def factorial(n: int):
         if result > sys.maxsize:
             raise ValueError(f"Факториал для {n} не поддерживается типом int")
     return result
+
 
 class TestFactorialFunction(unittest.TestCase):
     def test_factorial_of_zero(self):
@@ -33,8 +35,11 @@ class TestFactorialFunction(unittest.TestCase):
         with self.assertRaises(ValueError):
             factorial(1000000)
 
+
 if __name__ == '__main__':
+    suite = unittest.TestLoader().loadTestsFromTestCase(TestFactorialFunction)
+    runner = unittest.TextTestRunner()
     start_time = time.time()
-    unittest.main()
+    result = runner.run(suite)
     end_time = time.time()
     print(f"Время выполнения тестов: {end_time - start_time} секунд")
